@@ -27,7 +27,19 @@ public class Main
 	    return stack;
 	}
 	public static void insert(Stack<Integer> stack, int temp){
+	//Solves it in Ascending Order
 	    if(stack.size() == 0 || stack.peek() <= temp){
+	        stack.push(temp);
+	        return;
+	    }
+	    int LastElement = stack.pop();
+	    insert(stack,temp);
+	    stack.push(LastElement);
+	    return;
+	}
+	public static void insert(Stack<Integer> stack, int temp){
+	//Solves it in Descending Order
+	    if(stack.size() == 0 || stack.peek() >= temp){
 	        stack.push(temp);
 	        return;
 	    }
